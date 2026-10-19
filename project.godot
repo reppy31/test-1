@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="test 1"
+run/main_scene="res://test_1_node.tscn"
 config/features=PackedStringArray("4.7", "Mobile")
 config/icon="res://icon.svg"
 

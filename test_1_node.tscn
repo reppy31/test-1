@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bs36qfujoddmk"]
+
+[ext_resource type="Texture2D" uid="uid://dner1ycpscnep" path="res://assets/idle1.png" id="1_37h0x"]
+[ext_resource type="Texture2D" uid="uid://deac12e5fwitp" path="res://assets/idle2.png" id="2_gfv16"]
+[ext_resource type="Texture2D" uid="uid://dwjkwnoeckkig" path="res://assets/idle3.png" id="3_trvhx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_72uko"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_37h0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gfv16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_trvhx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_gfv16")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="test 1 node" type="Node2D" unique_id=1992488849]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1764025869]
+texture_repeat = 2
+position = Vector2(263, 253)
+sprite_frames = SubResource("SpriteFrames_72uko")
+animation = &"idle"
