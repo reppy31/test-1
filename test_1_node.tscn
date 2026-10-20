@@ -9,7 +9,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4wr1s"]
 shader = ExtResource("2_555dq")
 shader_parameter/wall_color = Color(0.29803923, 0.29803923, 0.29803923, 1)
-shader_parameter/margin_thickness = 2.0
+shader_parameter/margin_thickness = 10.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_72uko"]
 animations = [{
@@ -38,16 +38,16 @@ animations = [{
 
 [node name="test 1 node" type="Node2D" unique_id=1992488849]
 
-[node name="Testbackground1" type="Sprite2D" parent="." unique_id=466399988]
-position = Vector2(640, 360)
-scale = Vector2(0.6666667, 0.6666667)
+[node name="Testbackground1" type="TextureRect" parent="." unique_id=1437074943]
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture = ExtResource("1_trvhx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1764025869]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_4wr1s")
-position = Vector2(904, 372)
+position = Vector2(1360, 647)
 sprite_frames = SubResource("SpriteFrames_72uko")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.6862861
+frame_progress = 0.01636993
