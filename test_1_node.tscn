@@ -5,6 +5,8 @@
 [ext_resource type="Shader" uid="uid://e6cpi2xhj1vd" path="res://test_1_node.gdshader" id="2_555dq"]
 [ext_resource type="Texture2D" uid="uid://deac12e5fwitp" path="res://assets/idle2.png" id="2_gfv16"]
 [ext_resource type="Texture2D" uid="uid://dwjkwnoeckkig" path="res://assets/idle3.png" id="3_trvhx"]
+[ext_resource type="Texture2D" uid="uid://b8uflu2nlx8nh" path="res://assets/react.png" id="6_uf85e"]
+[ext_resource type="Script" uid="uid://4gonna0yl41j" path="res://animated_sprite_2d.gd" id="7_mu5y7"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4wr1s"]
 shader = ExtResource("2_555dq")
@@ -30,10 +32,13 @@ animations = [{
 "name": &"idle",
 "speed": 3.0
 }, {
-"frames": [],
-"loop": 1,
-"name": &"new_animation",
-"speed": 5.0
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_uf85e")
+}],
+"loop": 0,
+"name": &"react",
+"speed": 10.0
 }]
 
 [node name="test 1 node" type="Node2D" unique_id=1992488849]
@@ -48,6 +53,7 @@ texture_repeat = 2
 material = SubResource("ShaderMaterial_4wr1s")
 position = Vector2(1360, 647)
 sprite_frames = SubResource("SpriteFrames_72uko")
-animation = &"idle"
+animation = &"react"
 autoplay = "idle"
-frame_progress = 0.01636993
+frame_progress = 1.0
+script = ExtResource("7_mu5y7")
