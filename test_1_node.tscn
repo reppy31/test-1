@@ -6,10 +6,29 @@
 [ext_resource type="Texture2D" uid="uid://deac12e5fwitp" path="res://assets/idle2.png" id="2_gfv16"]
 [ext_resource type="Texture2D" uid="uid://dwjkwnoeckkig" path="res://assets/idle3.png" id="3_trvhx"]
 [ext_resource type="Texture2D" uid="uid://b8uflu2nlx8nh" path="res://assets/react.png" id="6_uf85e"]
+[ext_resource type="Texture2D" uid="uid://b8k5bix7doegh" path="res://assets/pickup1.png" id="6_y2bvt"]
+[ext_resource type="Texture2D" uid="uid://vnr5dst6ltdy" path="res://assets/pickup2.png" id="7_3tvnr"]
 [ext_resource type="Script" uid="uid://4gonna0yl41j" path="res://animated_sprite_2d.gd" id="7_mu5y7"]
+[ext_resource type="Texture2D" uid="uid://dvwbxararnvwq" path="res://assets/walk1.png" id="7_wm0ju"]
+[ext_resource type="Texture2D" uid="uid://ctj3cb1ijxlje" path="res://assets/walk2.png" id="8_0npwr"]
+[ext_resource type="Texture2D" uid="uid://bujqn2jlf73r4" path="res://assets/pickup3.png" id="8_vhwaj"]
 [ext_resource type="Texture2D" uid="uid://ccf7wm3sgaueo" path="res://assets/crumbledcan.png" id="8_yttpt"]
+[ext_resource type="Texture2D" uid="uid://d3kae687ck0ix" path="res://assets/walk3.png" id="9_bnbsb"]
 [ext_resource type="Texture2D" uid="uid://cyljv0sotk1p3" path="res://assets/crumbledcone.png" id="9_ehoxw"]
+[ext_resource type="Texture2D" uid="uid://63qi8bvynwkv" path="res://assets/pickup4.png" id="9_vnv05"]
+[ext_resource type="Texture2D" uid="uid://8uj5ynbr7ppu" path="res://assets/pickup5.png" id="10_0acl0"]
 [ext_resource type="Texture2D" uid="uid://ct58hji81tmus" path="res://assets/crumbledpaper.png" id="10_t2w7r"]
+[ext_resource type="Texture2D" uid="uid://b4xa4wakaa7o8" path="res://assets/walk4.png" id="10_vw1ia"]
+[ext_resource type="Texture2D" uid="uid://db57dn4sla6ox" path="res://assets/walk5.png" id="11_cj2xq"]
+[ext_resource type="Texture2D" uid="uid://coxfcpttt4l07" path="res://assets/pickup6.png" id="11_ojyvj"]
+[ext_resource type="Texture2D" uid="uid://ioh5hupvjo3l" path="res://assets/pickup7.png" id="12_1321d"]
+[ext_resource type="Texture2D" uid="uid://587npqqo1wdm" path="res://assets/walk6.png" id="12_r5hwh"]
+[ext_resource type="Texture2D" uid="uid://bnaxajnpqvg6e" path="res://assets/walk7.png" id="13_0nbnc"]
+[ext_resource type="Texture2D" uid="uid://bwn7r00kdieq8" path="res://assets/pickup8.png" id="13_74ks7"]
+[ext_resource type="Texture2D" uid="uid://cuieh62ikij4j" path="res://assets/pickup9.png" id="14_fvtcp"]
+[ext_resource type="Texture2D" uid="uid://b4awgnqhcdxq5" path="res://assets/walk8.png" id="14_x25xg"]
+[ext_resource type="Texture2D" uid="uid://c40e0jgebh280" path="res://assets/pickup10.png" id="15_7mddu"]
+[ext_resource type="Script" uid="uid://21cdpafk6sa2" path="res://litter.gd" id="17_2u0ie"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4wr1s"]
 shader = ExtResource("2_555dq")
@@ -37,11 +56,75 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("6_y2bvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3tvnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vhwaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_vnv05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_0acl0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ojyvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_1321d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_74ks7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_fvtcp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_7mddu")
+}],
+"loop": 0,
+"name": &"pickup",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("6_uf85e")
 }],
 "loop": 0,
 "name": &"react",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_wm0ju")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0npwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_bnbsb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vw1ia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_cj2xq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_r5hwh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_0nbnc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_x25xg")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 9.0
 }]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yttpt"]
@@ -77,14 +160,17 @@ material = SubResource("ShaderMaterial_yttpt")
 position = Vector2(949, 990)
 scale = Vector2(0.515, 0.515)
 texture = ExtResource("8_yttpt")
+script = ExtResource("17_2u0ie")
 
 [node name="Crumbledcone" type="Sprite2D" parent="." unique_id=913710590]
 material = SubResource("ShaderMaterial_uf85e")
 position = Vector2(532, 776)
 scale = Vector2(0.64875, 0.64875)
 texture = ExtResource("9_ehoxw")
+script = ExtResource("17_2u0ie")
 
 [node name="Crumbledpaper" type="Sprite2D" parent="." unique_id=139955026]
 position = Vector2(1641, 843)
 scale = Vector2(0.49999982, 0.49999982)
 texture = ExtResource("10_t2w7r")
+script = ExtResource("17_2u0ie")
