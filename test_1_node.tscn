@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://dwjkwnoeckkig" path="res://assets/idle3.png" id="3_trvhx"]
 [ext_resource type="Texture2D" uid="uid://b8uflu2nlx8nh" path="res://assets/react.png" id="6_uf85e"]
 [ext_resource type="Script" uid="uid://4gonna0yl41j" path="res://animated_sprite_2d.gd" id="7_mu5y7"]
+[ext_resource type="Texture2D" uid="uid://ccf7wm3sgaueo" path="res://assets/crumbledcan.png" id="8_yttpt"]
+[ext_resource type="Texture2D" uid="uid://cyljv0sotk1p3" path="res://assets/crumbledcone.png" id="9_ehoxw"]
+[ext_resource type="Texture2D" uid="uid://ct58hji81tmus" path="res://assets/crumbledpaper.png" id="10_t2w7r"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4wr1s"]
 shader = ExtResource("2_555dq")
@@ -41,6 +44,16 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yttpt"]
+shader = ExtResource("2_555dq")
+shader_parameter/wall_color = Color(0.29803923, 0.29803923, 0.29803923, 1)
+shader_parameter/margin_thickness = 20.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uf85e"]
+shader = ExtResource("2_555dq")
+shader_parameter/wall_color = Color(0.29803923, 0.29803923, 0.29803923, 1)
+shader_parameter/margin_thickness = 12.0
+
 [node name="test 1 node" type="Node2D" unique_id=1992488849]
 
 [node name="Testbackground1" type="TextureRect" parent="." unique_id=1437074943]
@@ -53,7 +66,25 @@ texture_repeat = 2
 material = SubResource("ShaderMaterial_4wr1s")
 position = Vector2(1360, 647)
 sprite_frames = SubResource("SpriteFrames_72uko")
-animation = &"react"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 1.0
 script = ExtResource("7_mu5y7")
+corner_radius = 100.0
+padding = -30.0
+
+[node name="Crumbledcan" type="Sprite2D" parent="." unique_id=1639152149]
+material = SubResource("ShaderMaterial_yttpt")
+position = Vector2(949, 990)
+scale = Vector2(0.515, 0.515)
+texture = ExtResource("8_yttpt")
+
+[node name="Crumbledcone" type="Sprite2D" parent="." unique_id=913710590]
+material = SubResource("ShaderMaterial_uf85e")
+position = Vector2(532, 776)
+scale = Vector2(0.64875, 0.64875)
+texture = ExtResource("9_ehoxw")
+
+[node name="Crumbledpaper" type="Sprite2D" parent="." unique_id=139955026]
+position = Vector2(1641, 843)
+scale = Vector2(0.49999982, 0.49999982)
+texture = ExtResource("10_t2w7r")
