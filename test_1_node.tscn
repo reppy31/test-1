@@ -157,14 +157,14 @@ padding = -30.0
 
 [node name="Crumbledcan" type="Sprite2D" parent="." unique_id=1639152149]
 material = SubResource("ShaderMaterial_yttpt")
-position = Vector2(949, 990)
+position = Vector2(836, 978)
 scale = Vector2(0.515, 0.515)
 texture = ExtResource("8_yttpt")
 script = ExtResource("17_2u0ie")
 
 [node name="Crumbledcone" type="Sprite2D" parent="." unique_id=913710590]
 material = SubResource("ShaderMaterial_uf85e")
-position = Vector2(532, 776)
+position = Vector2(495, 743.00006)
 scale = Vector2(0.64875, 0.64875)
 texture = ExtResource("9_ehoxw")
 script = ExtResource("17_2u0ie")
